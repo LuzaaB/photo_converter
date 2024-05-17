@@ -6,17 +6,17 @@ from pathlib import Path
 parent_path = Path(__file__).parent.parent.resolve()
 print(parent_path)
 
-path = parent_path / "heic_images"
+heic_path = parent_path / "heic_images"
 image_path = parent_path / "png_images"
 
-dir_list = os.listdir(path)
+dir_list = os.listdir(heic_path)
 # print("Files and directories in '", path, "' :")
 # print(dir_list)
 for each in dir_list: # os.listdir() can also be used
     print("each ", each)
     if each.endswith(".heic") or each.endswith(".HEIC"):
         print(each)
-        img = HEIC2PNG(path / each, quality=70)
+        img = HEIC2PNG(heic_path / each, quality=70)
         img.save(f"{image_path}/{each[:-4]}.png")
 
 
