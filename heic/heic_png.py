@@ -1,16 +1,22 @@
 from heic2png import HEIC2PNG
 import os
 # import glob
-# import pathlib
+import pathlib
+from pathlib import Path
 
-path = "E://Python//photo_converter"
+parent_path = Path(__file__).parent.parent.resolve()
+print(parent_path)
+
+path = parent_path / "heic_images"
+
 dir_list = os.listdir(path)
 # print("Files and directories in '", path, "' :")
 # print(dir_list)
 for each in dir_list: # os.listdir() can also be used
+    print("each ", each)
     if each.endswith(".heic") or each.endswith(".HEIC"):
         print(each)
-        img = HEIC2PNG(each, quality=70)
+        img = HEIC2PNG(path / each, quality=70)
         img.save()
 
 
