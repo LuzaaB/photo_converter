@@ -3,7 +3,7 @@ import img2pdf
 
 parent_path = Path(__file__).parent.parent.resolve()
 
-jpg_path = parent_path / "multi_jpg"
+jpg_path = parent_path / "jpg_multi_images"
 pdf_path = parent_path / "pdf_multi_images"
 
 file_name = pdf_path / "name.pdf"
