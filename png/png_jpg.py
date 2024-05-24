@@ -11,5 +11,6 @@ print(jpg_path)
 for each in png_path.iterdir():
     file_name = Path(each).name
     print(each)
-    img = Image.open(each)
-    image = img.convert('RGB').save(f"{jpg_path}/{file_name[:-4]}.jpg")    
+    if file_name.endswith("png") or file_name.endswith("PNG"):
+        img = Image.open(each)  
+        image = img.convert('RGB').save(f"{jpg_path}/{file_name[:-4]}.jpg")    
