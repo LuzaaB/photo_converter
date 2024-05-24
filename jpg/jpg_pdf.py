@@ -11,5 +11,5 @@ for each in jpg_path.iterdir():
     if file_name.endswith(".JPG") or file_name.endswith(".jpg"):
         pdf_name = pdf_path / f"{file_name[:-4]}.pdf"
         with open(pdf_name, "wb") as f :
-            f.write(img2pdf.convert(each))
+            f.write(img2pdf.convert(each, rotation=img2pdf.Rotation.ifvalid))
         
